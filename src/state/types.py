@@ -18,6 +18,46 @@ class AgentMessage:
     person_id: str | None = None
 
 
+@dataclass
+class SpeedDatingMessage:
+    """Message in a speed dating conversation."""
+
+    speaker_id: str
+    speaker_name: str
+    content: str
+    timestamp: float
+    turn_number: int  # 1-4
+
+
+@dataclass
+class SpeedDatingResult:
+    """Result of a speed dating conversation between two persons."""
+
+    male: Person
+    female: Person
+    messages: list[SpeedDatingMessage]
+    male_score: int  # 0-100
+    female_score: int  # 0-100
+    final_score: float  # Average of both scores
+    male_reasoning: str
+    female_reasoning: str
+    timestamp: float
+
+
+@dataclass
+class TraitSnapshot:
+    """Snapshot of population trait averages at a point in time."""
+
+    generation: int
+    timestamp: float
+    avg_openness: float
+    avg_conscientiousness: float
+    avg_extraversion: float
+    avg_agreeableness: float
+    avg_neuroticism: float
+    population_size: int
+
+
 def add_persons(existing: list[Person], new: list[Person]) -> list[Person]:
     """State reducer to accumulate persons in population.
 
@@ -73,6 +113,12 @@ class EvolutionState(TypedDict):
 
     # Messages/Events
     messages: Annotated[list[AgentMessage], add_messages]
+
+    # LLM Mating - Conversation Transcripts
+    conversation_transcripts: list[SpeedDatingResult]
+
+    # LLM Mating - Trait Evolution History
+    trait_history: list[TraitSnapshot]
 
     # Configuration
     config: SimulationConfig

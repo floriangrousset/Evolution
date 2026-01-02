@@ -1,41 +1,20 @@
 """Conversation manager for speed dating interactions."""
 
 import time
-from dataclasses import dataclass
+import sys
+from pathlib import Path
 from typing import TYPE_CHECKING
 
+# Add src directory to path for imports
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+from src.state.types import SpeedDatingMessage, SpeedDatingResult
 from .agent_factory import create_agent_for_person
 from .scoring import get_compatibility_score_with_reasoning
 
 if TYPE_CHECKING:
-    from ...src.agents.base import Person
-    from ...src.config import SimulationConfig
-
-
-@dataclass
-class SpeedDatingMessage:
-    """Message in a speed dating conversation."""
-
-    speaker_id: str
-    speaker_name: str
-    content: str
-    timestamp: float
-    turn_number: int  # 1-4
-
-
-@dataclass
-class SpeedDatingResult:
-    """Result of a speed dating conversation between two persons."""
-
-    male: "Person"
-    female: "Person"
-    messages: list[SpeedDatingMessage]
-    male_score: int  # 0-100
-    female_score: int  # 0-100
-    final_score: float  # Average of both scores
-    male_reasoning: str
-    female_reasoning: str
-    timestamp: float
+    from src.agents.base import Person
+    from src.config import SimulationConfig
 
 
 async def conduct_speed_date(
