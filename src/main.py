@@ -86,6 +86,8 @@ def initialize_state(config, adam: Person, eve: Person) -> EvolutionState:
         "simulation_start_time": current_time,
         "last_cycle_time": current_time,
         "messages": [],
+        "conversation_transcripts": [],
+        "trait_history": [],
         "config": config,
     }
 

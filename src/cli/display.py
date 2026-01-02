@@ -8,6 +8,10 @@ from rich.table import Table
 from rich.text import Text
 
 from ..state.types import AgentMessage, EvolutionState, calculate_population_stats
+from .panels.conversations import create_conversations_panel
+from .panels.reasoning import create_reasoning_panel
+from .panels.evolution_graphs import create_trait_evolution_panel
+from .panels.inspector import create_inspector_panel
 
 
 # Tool icons
@@ -226,6 +230,25 @@ class Display:
         # Create population grid
         grid = self.create_population_grid(state)
         self.console.print(grid)
+
+        # NEW PANELS: LLM Mating Features
+        # Only show if LLM mating is enabled
+        if state["config"].enable_llm_mating:
+            # Show recent conversations
+            conversations = create_conversations_panel(state)
+            self.console.print(conversations)
+
+            # Show agent reasoning
+            reasoning = create_reasoning_panel(state)
+            self.console.print(reasoning)
+
+            # Show trait evolution graphs
+            evolution = create_trait_evolution_panel(state)
+            self.console.print(evolution)
+
+            # Show agent inspector (most recent couple)
+            inspector = create_inspector_panel(state)
+            self.console.print(inspector)
 
         # Create events
         events = self.create_events_panel(state["messages"])
