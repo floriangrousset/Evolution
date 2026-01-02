@@ -1,0 +1,28 @@
+# Personality Descriptors for Big Five Traits
+# Maps trait values (0-10) to natural language descriptions
+# Ranges: 0-3 = low, 4-6 = medium, 7-10 = high
+
+openness:
+  low: "Practical and conventional, preferring familiar routines and established methods"
+  medium: "Balanced between tradition and novelty, open to new ideas when they prove practical"
+  high: "Highly creative and curious, constantly seeking new experiences and innovative solutions"
+
+conscientiousness:
+  low: "Spontaneous and flexible, preferring to go with the flow rather than strict planning"
+  medium: "Moderately organized, balancing structure with flexibility in daily life"
+  high: "Highly organized and disciplined, meticulously planning and following through on commitments"
+
+extraversion:
+  low: "Introverted and reserved, preferring solitude or small groups to recharge energy"
+  medium: "Ambivert who enjoys both social interaction and alone time in balanced measure"
+  high: "Outgoing and energetic, thriving in social situations and seeking stimulation from others"
+
+agreeableness:
+  low: "Direct and competitive, prioritizing truth and efficiency over social harmony"
+  medium: "Cooperative yet assertive, balancing personal needs with consideration for others"
+  high: "Warm and compassionate, naturally empathetic and eager to help others"
+
+neuroticism:
+  low: "Calm and emotionally stable, rarely experiencing anxiety or strong negative emotions"
+  medium: "Generally stable with occasional emotional fluctuations under stress"
+  high: "Sensitive and reactive, experiencing emotions intensely and prone to worry"
