@@ -11,32 +11,32 @@ An agentic AI life evolution simulator where each person is a **conversational L
 <div align="center">
 
 ### 💬 Speed Dating Conversations
-<a href="doc/Screenshot 2026-01-01 at 10.48.53 PM.png"><img src="doc/Screenshot 2026-01-01 at 10.48.53 PM.png" width="400" alt="Speed Dating Conversations"></a>
+<a href="doc/speed-dating-conversation.png"><img src="doc/thumbnails/speed-dating-conversation.png" alt="Speed Dating Conversations"></a>
 
 *Adam and Eve discuss their skills and interests in a natural conversation*
 
 ### 🧠 Agent Reasoning & Decision Making
-<a href="doc/Screenshot 2026-01-01 at 10.49.01 PM.png"><img src="doc/Screenshot 2026-01-01 at 10.49.01 PM.png" width="400" alt="Agent Reasoning"></a>
+<a href="doc/agent-reasoning.png"><img src="doc/thumbnails/agent-reasoning.png" alt="Agent Reasoning"></a>
 
 *See why each agent scored their compatibility the way they did*
 
 ### 📊 Full Dashboard View
-<a href="doc/Screenshot 2026-01-01 at 10.50.01 PM.png"><img src="doc/Screenshot 2026-01-01 at 10.50.01 PM.png" width="400" alt="Full Dashboard"></a>
+<a href="doc/full-dashboard.png"><img src="doc/thumbnails/full-dashboard.png" alt="Full Dashboard"></a>
 
 *Real-time population stats, conversations, reasoning, and trait evolution*
 
 ### 🔍 Agent Inspector
-<a href="doc/Screenshot 2026-01-01 at 10.49.51 PM.png"><img src="doc/Screenshot 2026-01-01 at 10.49.51 PM.png" width="400" alt="Agent Inspector"></a>
+<a href="doc/agent-inspector.png"><img src="doc/thumbnails/agent-inspector.png" alt="Agent Inspector"></a>
 
 *Deep dive into any agent's personality, skills, tools, and relationship history*
 
 ### 📈 Trait Evolution Over Generations
-<a href="doc/Screenshot 2026-01-01 at 10.49.36 PM.png"><img src="doc/Screenshot 2026-01-01 at 10.49.36 PM.png" width="400" alt="Trait Evolution"></a>
+<a href="doc/trait-evolution.png"><img src="doc/thumbnails/trait-evolution.png" alt="Trait Evolution"></a>
 
 *Watch how personality traits shift across generations*
 
 ### 👥 Population Grid
-<a href="doc/Screenshot 2026-01-01 at 10.50.24 PM.png"><img src="doc/Screenshot 2026-01-01 at 10.50.24 PM.png" width="400" alt="Population Grid"></a>
+<a href="doc/population-grid.png"><img src="doc/thumbnails/population-grid.png" alt="Population Grid"></a>
 
 *Visual overview of all agents with their generation, gender, and tools*
 
