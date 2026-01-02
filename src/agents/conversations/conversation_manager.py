@@ -1,20 +1,15 @@
 """Conversation manager for speed dating interactions."""
 
 import time
-import sys
-from pathlib import Path
 from typing import TYPE_CHECKING
 
-# Add src directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-
-from src.state.types import SpeedDatingMessage, SpeedDatingResult
+from ...state.types import SpeedDatingMessage, SpeedDatingResult
 from .agent_factory import create_agent_for_person
 from .scoring import get_compatibility_score_with_reasoning
 
 if TYPE_CHECKING:
-    from src.agents.base import Person
-    from src.config import SimulationConfig
+    from ..base import Person
+    from ...config import SimulationConfig
 
 
 async def conduct_speed_date(

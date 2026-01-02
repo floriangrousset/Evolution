@@ -298,12 +298,12 @@ async def llm_speed_dating_node(state: EvolutionState) -> dict:
     Returns:
         Dictionary with updated couples, singles, messages, and conversation_transcripts.
     """
-    from ...agents.conversations.conversation_manager import conduct_speed_date
+    from ..agents.conversations.conversation_manager import conduct_speed_date
 
     # Get singles
     singles = get_singles(state["population"])
-    males = [p for p in singles if p.gender == "male"]
-    females = [p for p in singles if p.gender == "female"]
+    males = singles["male"]  # List of Person objects
+    females = singles["female"]  # List of Person objects
 
     if not males or not females:
         return {

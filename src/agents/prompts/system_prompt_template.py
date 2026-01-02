@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING
 import yaml
 
 if TYPE_CHECKING:
-    from ...src.agents.base import Person
+    from ..base import Person
 
 # Load personality descriptors
 _DESCRIPTORS_PATH = Path(__file__).parent / "personality_descriptors.yaml"

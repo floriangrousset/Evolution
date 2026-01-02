@@ -6,8 +6,8 @@ from langchain_anthropic import ChatAnthropic
 from langchain_core.messages import HumanMessage, SystemMessage
 
 if TYPE_CHECKING:
-    from ...src.agents.base import Person
-    from ...src.config import SimulationConfig
+    from ..base import Person
+    from ...config import SimulationConfig
 
 
 class ConversationalAgent:
