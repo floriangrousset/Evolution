@@ -71,16 +71,10 @@ async def find_mates_node(state: EvolutionState) -> dict:
         )
         return {"messages": messages}
 
-    # Get unpaired adults
+    # Get unpaired adults - returns Person objects, not IDs
     singles = get_singles(state["population"])
-    males = [find_person_by_id(state["population"], pid) for pid in singles["male"]]
-    females = [
-        find_person_by_id(state["population"], pid) for pid in singles["female"]
-    ]
-
-    # Remove None values (shouldn't happen but be safe)
-    males = [m for m in males if m is not None]
-    females = [f for f in females if f is not None]
+    males = singles["male"]  # List of Person objects
+    females = singles["female"]  # List of Person objects
 
     # Find best matches using greedy algorithm
     matches = greedy_matching(males, females, min_compatibility=30.0)
@@ -105,13 +99,13 @@ async def find_mates_node(state: EvolutionState) -> dict:
             )
         )
 
-    # Update singles lists
-    paired_males = {male.id for male, _, _ in matches}
-    paired_females = {female.id for _, female, _ in matches}
+    # Update singles lists - convert remaining unpaired Person objects to IDs
+    paired_male_ids = {male.id for male, _, _ in matches}
+    paired_female_ids = {female.id for _, female, _ in matches}
 
     updated_singles = {
-        "male": [pid for pid in singles["male"] if pid not in paired_males],
-        "female": [pid for pid in singles["female"] if pid not in paired_females],
+        "male": [p.id for p in males if p.id not in paired_male_ids],
+        "female": [p.id for p in females if p.id not in paired_female_ids],
     }
 
     return {
